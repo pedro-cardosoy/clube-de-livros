@@ -1,3 +1,73 @@
+.background-content {
+    width: 100vw;
+    height: 100vh;
+    background: url(../assets/images/hero-background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
 .main {
-    justify-content: space-between;
+    max-width: 80rem;
+    width: 100%;
+    height: 100vh;
+    margin-inline: auto;
+    flex-direction: column;
+    header {
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        padding: 2rem 1rem;
+
+        img {
+            max-width: 14.375rem;
+            width: 100%;
+        }
+    }
+    & > div {
+        width: 40rem;
+        text-align: center;
+        display: grid;
+        gap: 2rem;
+        margin-inline: auto;
+        margin-top: 5rem;
+    }
+}
+
+.informations-content {
+    margin-top: 5rem;
+    max-width: 80rem;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+
+    .informations-content {
+        max-width: 65rem;
+        width: 100%;
+    }
+    p {
+        font: var(--subtitle);
+    }
+    span {
+        font-weight: 700;
+        color: var(--blue-light);
+    }
+    img {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+    & img:nth-child(1) {
+        position: absolute;
+        left: 50%;
+    }
+    & img:nth-child(2) {
+        position: absolute;
+        left: 50%;
+    }
+    & img:nth-child(4) {
+        position: absolute;
+        left: 50%;
+    }
 }

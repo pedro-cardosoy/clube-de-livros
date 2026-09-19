@@ -53,11 +53,37 @@ img {
 }
 a {
     text-decoration: none;
-    text-transform: uppercase;
-    display: inline-block;
-}
-button {
     cursor: pointer;
+    color: var(--text-title);
+    font: var(--button);
+}
+body {
+    background-color: var(--shape-background);
+}
+h1 {
+    font: var(--title-lg);
+    color: var(--text-title);
+}
+h2 {
+    font: var(--title-md);
+    color: var(--text-title);
+}
+h3 {
+    font: var(--title-sm);
+    color: var(--text-title);
+}
+h4 {
+    font: var(--title-xs);
+    color: var(--text-title);
+}
+p {
+    font: var(--body-md);
+    color: var(--text-label);
+}
+.btn-pink {
+    background-color: var(--pink-dark);
+    padding: .75rem 1.25rem;
+    border-radius: .75rem;
 }
 .container {
     margin-inline: auto;
