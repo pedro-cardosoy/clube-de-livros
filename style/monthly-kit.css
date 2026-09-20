@@ -1,0 +1,40 @@
+.monthly-kit {
+    margin-top: 5rem;
+    flex-direction: column;
+    gap: 8rem;
+    align-items: center;
+    height: 100vh;
+    max-width: 80rem;
+    width: 100%;
+
+    .cover {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+
+
+        .marca-paginas{
+            height: 52.5rem;
+            width: 27.8125rem;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+        }
+        .livro-principal {
+            width: 29.1875rem;
+            height: 38.5625rem;
+            position: absolute;
+            left: 30%;
+            opacity: 0;
+            
+        }
+        .broche {
+            width: 13.875rem;
+            height: 15.875rem;
+            position: absolute;
+            top: 65%;
+            left: 35%;
+        }
+    }
+}

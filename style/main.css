@@ -36,15 +36,19 @@
 }
 
 .informations-content {
-    margin-top: 5rem;
+    margin-top: 8rem;
     max-width: 80rem;
     width: 100%;
     text-align: center;
-    position: relative;
+    align-items: center;
     flex-direction: column;
 
-    .informations-content {
-        max-width: 65rem;
+    .informations {
+        max-width: 75rem;
+        width: 100%;
+    }
+    .content-image {
+        justify-content: space-between;
         width: 100%;
     }
     p {
@@ -57,17 +61,5 @@
     img {
         width: 5.5rem;
         height: 5.5rem;
-    }
-    & img:nth-child(1) {
-        position: absolute;
-        left: 50%;
-    }
-    & img:nth-child(2) {
-        position: absolute;
-        left: 50%;
-    }
-    & img:nth-child(4) {
-        position: absolute;
-        left: 50%;
     }
 }
