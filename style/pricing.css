@@ -1,0 +1,169 @@
+.pricing {
+	max-width: 80rem;
+	width: 100%;
+	min-height: 100vh;
+	padding: 6rem 1rem;
+    margin-top: 25rem;
+}
+
+.pricing-header {
+	margin-bottom: 4rem;
+	text-align: center;
+}
+
+.pricing-header p {
+	margin-top: .75rem;
+}
+
+.pricing-cards {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: center;
+	gap: 1.5rem;
+	padding: 2rem 1rem;
+}
+
+.pricing-card {
+	position: relative;
+	display: flex;
+	min-height: 27rem;
+	flex-direction: column;
+	padding: 2rem;
+	border: 1px solid var(--blue-dark);
+	border-radius: 1rem;
+	background: rgba(0, 35, 71, .55);
+	box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .2);
+	transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.pricing-card:hover,
+.pricing-card:focus-within {
+	z-index: 2;
+	transform: scale(1.1);
+	border-color: var(--blue-light);
+	box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .35);
+}
+
+.pricing-card-monthly {
+	transform: rotate(-6deg);
+}
+
+.pricing-card-annual {
+	transform: rotate(6deg);
+}
+
+.pricing-card-monthly:hover,
+.pricing-card-monthly:focus-within {
+	transform: rotate(-6deg) scale(1.1);
+}
+
+.pricing-card-annual:hover,
+.pricing-card-annual:focus-within {
+	transform: rotate(6deg) scale(1.1);
+}
+
+.pricing-card-featured {
+	min-height: 29rem;
+	border-color: var(--blue-base);
+	background: rgba(0, 35, 71, .9);
+}
+
+.pricing-card__badge {
+	align-self: flex-end;
+	margin-bottom: .75rem;
+	padding: .5rem .9rem;
+	border-radius: 999px;
+	background: var(--blue-dark);
+	color: var(--text-title);
+	font: var(--tag);
+	text-transform: uppercase;
+}
+
+.pricing-card__period {
+	color: var(--pink-light);
+	font: var(--title-xs);
+}
+
+.pricing-card__price {
+	display: block;
+	margin-top: 1.5rem;
+	color: var(--text-title);
+	font: var(--title-md);
+	white-space: nowrap;
+}
+
+.pricing-card__price small {
+	margin-left: .25rem;
+	font: var(--body-md);
+}
+
+.pricing-card__annual {
+	margin-top: .5rem;
+	font-size: .875rem;
+}
+
+.pricing-card__features {
+	display: grid;
+	flex: 1;
+	gap: .85rem;
+	margin: 2.5rem 0 1.5rem;
+	padding: 0;
+	list-style: none;
+}
+
+.pricing-card__features li {
+	color: var(--text-label);
+	font: var(--body-sm);
+}
+
+.pricing-card__features li::before {
+	content: "✦";
+	margin-right: .6rem;
+	color: var(--pink-base);
+}
+
+.pricing-card__button {
+	display: block;
+	padding: .8rem 1rem;
+	border-radius: .5rem;
+	background: var(--blue-base);
+	text-align: center;
+	transition: background-color 200ms ease;
+}
+
+.pricing-card-featured .pricing-card__button {
+	background: var(--pink-base);
+}
+
+.pricing-card__button:hover {
+	background: var(--blue-light);
+}
+
+.pricing-card-featured .pricing-card__button:hover {
+	background: var(--pink-light);
+}
+
+@media (max-width: 56rem) {
+	.pricing-cards {
+		grid-template-columns: 1fr;
+		justify-items: center;
+	}
+
+	.pricing-card,
+	.pricing-card-featured {
+		width: min(100%, 24rem);
+		min-height: 0;
+	}
+
+	.pricing-card-monthly,
+	.pricing-card-annual {
+		transform: none;
+	}
+
+	.pricing-card-monthly:hover,
+	.pricing-card-monthly:focus-within,
+	.pricing-card-annual:hover,
+	.pricing-card-annual:focus-within {
+		transform: scale(1.1);
+	}
+}
