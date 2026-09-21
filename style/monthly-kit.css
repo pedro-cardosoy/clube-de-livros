@@ -3,9 +3,29 @@
     flex-direction: column;
     gap: 8rem;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     max-width: 80rem;
     width: 100%;
+
+
+    .title-monthly-kit {
+       text-align: center;
+    }
+    .title-monthly-kit h3 {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &::before,
+        &::after {
+            content: "";
+            flex: 0 0 2.75rem;
+            width: 2.75rem;
+            height: 2.75rem;
+            background: url("../assets/icons/star-pink.svg") center / contain no-repeat;
+        }
+    }
 
     .cover {
         position: relative;
@@ -20,21 +40,109 @@
             position: absolute;
             top: 10%;
             left: 50%;
+            z-index: 1;
         }
         .livro-principal {
             width: 29.1875rem;
             height: 38.5625rem;
             position: absolute;
             left: 30%;
-            opacity: 0;
-            
+            z-index: 2;
+        }
+        .seta-livro {
+            width: 15.875rem;
+            height: auto;
+            position: absolute;
+            top: -12%;
+            left: 20%;
+            z-index: 3;
         }
         .broche {
             width: 13.875rem;
             height: 15.875rem;
             position: absolute;
             top: 65%;
-            left: 35%;
+            left: 20%;
+            z-index: 1;
+        }
+    }
+}
+
+@keyframes monthly-kit-book-entry {
+    from {
+        opacity: 0;
+        transform: translateY(2rem) scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes monthly-kit-bookmark-entry {
+    from {
+        opacity: 0;
+        transform: translateY(2rem) rotate(-15deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes monthly-kit-pin-entry {
+    from {
+        opacity: 0;
+        transform: translateX(22rem) rotate(15deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+        z-index: 2;
+    }
+}
+
+@keyframes monthly-kit-arrow-entry {
+    from {
+        opacity: 0;
+        transform: translateY(4rem) scale(.85) rotate(-4deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    .monthly-kit .cover > img {
+        animation-duration: 900ms;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+        animation-timeline: view(block 0% 300px);
+        animation-range: entry 0% entry 100%;
+    }
+
+    .monthly-kit .cover .marca-paginas {
+        animation-name: monthly-kit-bookmark-entry;
+    }
+
+    .monthly-kit .cover .livro-principal {
+        animation-name: monthly-kit-book-entry;
+    }
+
+    .monthly-kit .cover .seta-livro {
+        animation-name: monthly-kit-arrow-entry;
+    }
+
+    .monthly-kit .cover .broche {
+        animation-name: monthly-kit-pin-entry;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .monthly-kit .cover > img {
+            animation: none;
+            opacity: 1;
+            transform: none;
         }
     }
 }

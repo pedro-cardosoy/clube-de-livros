@@ -24,6 +24,13 @@
             max-width: 14.375rem;
             width: 100%;
         }
+        a {
+            transition: background-color 200ms ease;
+        }
+
+        & a:hover {
+            background-color: var(--pink-base);
+        }
     }
     & > div {
         width: 40rem;
