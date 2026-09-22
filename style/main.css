@@ -6,6 +6,8 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    animation: background-content-entry 1s ease-in-out;
+
 }
 
 .main {
@@ -68,5 +70,40 @@
     img {
         width: 5.5rem;
         height: 5.5rem;
+
+        animation: img-efect 2s ease-in-out alternate infinite;
+        transition: rotate 200ms ease;
+
+        &:hover {
+            animation-play-state: paused;
+            rotate: 15deg;
+        }
+    }
+}
+
+@keyframes background-content-entry {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes img-efect {
+    0% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+@keyframes img-entry {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

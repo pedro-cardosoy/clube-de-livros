@@ -132,6 +132,7 @@
 
     .monthly-kit .cover .seta-livro {
         animation-name: monthly-kit-arrow-entry;
+        animation-timeline: view(block 0% 500px);
     }
 
     .monthly-kit .cover .broche {
